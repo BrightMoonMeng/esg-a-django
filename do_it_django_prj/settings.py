@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'diary',
     'django_bootstrap5',
     'debug_toolbar',
+    'accounts',
 ]
 
 MIDDLEWARE = [
