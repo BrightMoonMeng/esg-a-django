@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant</title>
+</head>
+<body>
+    <h1>Restaurant</h1>
+
+    {% for post in post_rs %}
+        <h2>
+            <a href="{{ post.get_absolute_url_res }}"></a>
+                <a href="/blog/restaurant/{{ post.pk }}/">
+                {{ post.name }}
+            </a>
+        </h2>
+        <h4>{{ post.description }}</h4>
+        <p>{{ post.average_score }}</p>
+    {% endfor %}
+<hr/>
+<a href="/blog/restaurant/new/">새 포스팅 쓰기</a>
+
+</body>
+</html>

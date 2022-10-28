@@ -25,7 +25,7 @@ SECRET_KEY = "django-insecure-qvj+dp0*7#u*j54qzw$i9s-r8qni8_rgb+x7t&*=q6m^6jk%yr
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', '0aed-121-159-54-81.jp.ngrok.io']
 
 
 # Application definition
@@ -39,9 +39,13 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "blog",
     "single_pages",
+    'diary',
+    'django_bootstrap5',
+    'debug_toolbar',
 ]
 
 MIDDLEWARE = [
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -49,6 +53,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+
 ]
 
 ROOT_URLCONF = "do_it_django_prj.urls"
@@ -117,3 +122,10 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+# django-debug-toolbar
+# https://django-debug-toolbar.readthedocs.io/en/latest/installation.html#configure-internal-ips
+
+INTERNAL_IPS = [
+    "127.0.0.1",
+]
